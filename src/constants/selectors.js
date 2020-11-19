@@ -1,0 +1,4 @@
+/* Селекторы по фильтрации списка юзеров */
+export const USER_SELECTOR = "USER_SELECTOR";
+export const USER_SELECTOR_SHOW_ALL = "USER_SELECTOR_SHOW_ALL";
+export const USER_SELECTOR_SHOW_FILTERED_BY_COMPANY = "USER_SELECTOR_SHOW_FILTERED_BY_COMPANY";

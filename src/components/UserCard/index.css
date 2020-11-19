@@ -1,0 +1,76 @@
+.padding-card{
+    padding: 70px 15px;
+}
+
+.user-card{
+    min-height: 600px;
+}
+
+.todos-card{
+    padding-top: 1em !important;
+    max-height: 600px;
+}
+
+.user-box {
+    position: relative;
+    padding: 30px;
+    padding-top: 5em;
+    background: #fff;
+    float: left;
+    width: 450px;
+    -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.19);
+    -ms-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.19);
+    -o-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.19);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.user-box .user {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-top: -73px;
+    margin-left: -73px;
+    width: 147px;
+    height: 147px;
+}
+.user-box .user img {
+    width: 147px;
+    height: 147px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    border: 15px solid #f2f2f2;
+}
+.user-box h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.user-box .position {
+    font-size: 16px;
+    color: #8f989f;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.key-item{
+    color: rgba(17,104,191,1);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    display: inline-block;
+    height: 25px;
+    padding-right: 5px;
+}
+
+
+
+
