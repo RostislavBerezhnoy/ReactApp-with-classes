@@ -24,7 +24,7 @@ export default class RootRouter extends Component {
           }/>
             <Route exact path="/user" name="Error" render={props =>
                 <DefaultLayout {...props}>
-                    <ErrorComponent errorMessage="Пользователь не найден"/>
+                    <ErrorComponent errorMessage="Пользователь не найден" />
                 </DefaultLayout>
             }/>
             <Route exact path="/user/:id" name="UserCard" render={props =>

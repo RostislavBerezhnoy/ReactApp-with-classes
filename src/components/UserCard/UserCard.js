@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { ErrorComponent } from "../ErrorComponent";
 import { SpinnerComponent } from "../SpinnerComponent";
 
 
@@ -8,11 +7,6 @@ export default class UserCard extends Component {
     constructor(props) {
         super(props);
         this.renderUserCard = this.renderUserCard.bind(this);
-    }
-
-    componentDidMount() {
-        const { userId, onGetUserPayload } = this.props;
-        onGetUserPayload(userId);
     }
 
     renderUserCard(){
@@ -59,27 +53,17 @@ export default class UserCard extends Component {
     }
 
     render() {
-        const { payload, loading, error } = this.props.userPayload;
+        const { loading } = this.props.userPayload;
         if(!loading){
-            if (!error){
-                if (payload.length !== 0){
-                    return this.renderUserCard();
-                } else {
-                    return (<ErrorComponent errorMessage="К сожалению, данных нет"/>)
-                }
-            } else {
-                return (<ErrorComponent errorMessage="Пользователь не найден"/>)
-            }
+            return this.renderUserCard();
         } else {
-            return (<SpinnerComponent/>)
+            return (<SpinnerComponent/>);
         }
     }
 }
 
 
 UserCard.propTypes = {
-    userId: PropTypes.string.isRequired,
-    onGetUserPayload: PropTypes.func.isRequired,
     userPayload: PropTypes.shape({
         payload: PropTypes.arrayOf(
             PropTypes.shape({
@@ -106,10 +90,6 @@ UserCard.propTypes = {
                 })
             }).isRequired,
         ).isRequired,
-        loading: PropTypes.bool.isRequired,
-        error: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.object
-        ])
+        loading: PropTypes.bool.isRequired
     }).isRequired
 };

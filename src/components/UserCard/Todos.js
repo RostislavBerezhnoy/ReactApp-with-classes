@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
-import { ErrorComponent } from "../ErrorComponent";
 import { SpinnerComponent } from "../SpinnerComponent";
 
 
@@ -34,19 +32,11 @@ export default class Todos extends Component {
     }
 
     render() {
-        const { list, loading, error } = this.props.userTodos;
+        const { loading } = this.props.userTodos;
         if(!loading){
-            if (!error){
-                if (list.length !== 0){
-                    return this.renderTodosCard();
-                } else {
-                    return (<ErrorComponent errorMessage="К сожалению, данных нет"/>)
-                }
-            } else {
-                return (<ErrorComponent errorMessage="К сожалению, данных нет"/>)
-            }
+            return this.renderTodosCard();
         } else {
-            return (<SpinnerComponent/>)
+            return (<SpinnerComponent/>);
         }
     }
 }
@@ -56,11 +46,7 @@ Todos.propTypes = {
     onGetUserTodos: PropTypes.func.isRequired,
     userTodos: PropTypes.shape({
         list: PropTypes.array.isRequired,
-        loading: PropTypes.bool.isRequired,
-        error: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.object
-        ])
+        loading: PropTypes.bool.isRequired
     }).isRequired,
     userTodosList: PropTypes.arrayOf(
         PropTypes.shape({
